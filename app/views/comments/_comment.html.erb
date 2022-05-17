@@ -1,0 +1,15 @@
+<div id="<%= dom_id(comment) %>">
+  <div class="border border-gray-200 rounded-lg p-4 mb-4">
+    <div class="text-xs text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
+      <%= comment.name %> commented:
+    </div>
+    
+    <div class="text-base text-gray-700 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
+      <%= comment.body %>
+    </div>
+
+    <div class="text-right text-xs text-gray-500">
+      <%= comment.created_at.to_formatted_s(:long) %>
+    </div>
+  </div>
+</div>

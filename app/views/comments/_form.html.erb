@@ -1,0 +1,30 @@
+<%= turbo_frame_tag "comment_form" do %>
+  <%= form_with model: comment, url: post_comments_path(@post) do |form| %>
+    <div class="pb-4">
+      If you have any questions or feedback, please leave a comment below!
+    </div>
+    <% if comment.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+        <ul>
+          <% comment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="pb-4">
+      <%= form.label :name, class: "label" %>
+      <%= form.text_field :name, class: "input md:w-3/4" %>
+    </div>
+
+    <div class="pb-4">
+      <%= form.label :body, class: "label" %>
+      <%= form.text_area :body, rows: 5, class: "input md:w-3/4" %>
+    </div>
+
+    <%= form.submit 'Submit', class: "rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
+  <% end %>
+<% end %>

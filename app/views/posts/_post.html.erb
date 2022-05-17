@@ -1,0 +1,19 @@
+<div id="<%= dom_id post %>">
+  <div>
+    <%= link_to(post, class: 'mb-8', data: { "turbo-frame": "_top" }) do %>
+        <p class="font-bold text-3xl">
+          <%= post.title %>
+        </p>
+
+        <p class="text-xl">
+          <%= post.heading %>
+        </p>
+
+        <p class="text-sm text-gray-500 italic">
+          Published: <%= time_tag post.created_at %> - Updated: <%= time_tag post.updated_at %>
+        </p>
+
+        <hr class="my-6">
+    <% end %>
+  </div>
+</div>
