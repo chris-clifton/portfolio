@@ -1,0 +1,2 @@
+<%= turbo_stream.replace('comment_form', partial: 'comments/form', locals: { comment: Comment.new }) %>
+<%= turbo_stream.update('comment_count', plain: @post.comments.size) %>

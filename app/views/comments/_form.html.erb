@@ -1,7 +1,10 @@
 <%= turbo_frame_tag "comment_form" do %>
   <%= form_with model: comment, url: post_comments_path(@post) do |form| %>
+    <div class="text-2xl my-4">
+      Comments
+    </div>
     <div class="pb-4">
-      If you have any questions or feedback, please leave a comment below!
+      If you have any questions, comments, or feedback, please leave them below!
     </div>
     <% if comment.errors.any? %>
       <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
@@ -25,6 +28,6 @@
       <%= form.text_area :body, rows: 5, class: "input md:w-3/4" %>
     </div>
 
-    <%= form.submit 'Submit', class: "rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit 'Submit', class: "mb-4 rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
   <% end %>
 <% end %>
