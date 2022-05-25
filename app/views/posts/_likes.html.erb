@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "#{dom_id(post)}_likes" do %>
+  <div id="like-button" data-controller="likes" class="flex">
+    <%= form_with url: like_post_path(@post),
+                  data: { action: 'click->likes#fire' },
+                  method: 'PATCH' do |form| %>
+      <%= image_submit_tag("thumbs_up.svg", width: "25", height: "25") %>
+    <% end %>
+
+    <%= post.likes.size %>
+  </div>
+<% end %>

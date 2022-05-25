@@ -7,3 +7,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
+pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.5.1/dist/confetti.module.mjs"

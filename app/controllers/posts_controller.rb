@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  include ActionView::RecordIdentifier
+
+  before_action :set_post, only: %i[ show edit update destroy like]
 
   # GET /posts or /posts.json
   def index
@@ -58,6 +60,24 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    if @post.liked_by?(@ip_address)
+      @post.likes.where(ip_address: @ip_address).first.destroy
+    else
+      Like.create!(post_id: @post.id, ip_address: @ip_address)
+    end
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          "#{dom_id(@post)}_likes",
+          partial: 'posts/likes',
+          locals: { post: @post }
+        )
+      end
     end
   end
 
