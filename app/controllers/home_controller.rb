@@ -18,13 +18,11 @@ class HomeController < ApplicationController
   end
 
   def resume
-        respond_to do |format|
-            format.html
-            format.pdf do
-                render pdf: "chris_clifton_resume",
-                template: "home/resume",
-                formats: [:html]
-            end
-        end
+  end
+
+  def download_resume
+    resume = render_to_string "home/_resume_body", layout: "pdf"
+    binary_pdf = Dhalang::PDF.get_from_html(resume)
+    send_data(binary_pdf, filename: 'chris_clifton_resume.pdf', type: 'application/pdf') 
   end
 end

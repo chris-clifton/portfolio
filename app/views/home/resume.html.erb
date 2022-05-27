@@ -1,23 +1,23 @@
 <div class="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
-  <div class="text-left">
-    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-      <span class="block xl:inline text-indigo-700">Resume</span>
-    </h1>
-  </div>
+  <div class="md:flex md:justify-between">
+    <div></div>
 
-  <div>
-    <div class="mb-4">Amet velit aliquip non proident non enim nostrud velit et eu sit ad dolor. Ullamco dolore veniam sit nisi commodo magna. Ea elit eu qui aliqua ullamco et qui velit ullamco velit irure consequat aliquip nisi. Officia laboris aliqua do commodo ex incididunt.</div>
-  
-    <div class="mb-4">Amet velit aliquip non proident non enim nostrud velit et eu sit ad dolor. Ullamco dolore veniam sit nisi commodo magna. Ea elit eu qui aliqua ullamco et qui velit ullamco velit irure consequat aliquip nisi. Officia laboris aliqua do commodo ex incididunt.</div>
-
-    <div class="mb-4">Amet velit aliquip non proident non enim nostrud velit et eu sit ad dolor. Ullamco dolore veniam sit nisi commodo magna. Ea elit eu qui aliqua ullamco et qui velit ullamco velit irure consequat aliquip nisi. Officia laboris aliqua do commodo ex incididunt.</div>
-
-    <div class="mb-4">Amet velit aliquip non proident non enim nostrud velit et eu sit ad dolor. Ullamco dolore veniam sit nisi commodo magna. Ea elit eu qui aliqua ullamco et qui velit ullamco velit irure consequat aliquip nisi. Officia laboris aliqua do commodo ex incididunt.</div>
-  </div>
-
-  <div class="mt-5 sm:mt-8 sm:flex sm:justify-center md:justify-start">
-    <div class="mt-3 sm:mt-0 sm:ml-3">
-    <%= link_to 'Download PDF', "#", class: "flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10" %>
+    <div class="sm:flex sm:justify-center md:justify-start">
+      <div class="mt-3 sm:mt-0 sm:ml-3">
+        <div data-controller="resume" data-resume-url-value="<%= home_download_resume_path %>">
+          <div id="download-pdf-button" data-action="click->resume#download" class="cursor-pointer flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+            Download PDF
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="md:hidden my-4 text-gray-500">
+    I know, I know...here I am saying that this website is 100% responsive meanwhile I have some funky word breaks in this view on mobile.
+    <br/><br/>
+    I wanted to dynamically generate PDFs based on the contents of this view (rather than serve a static file) so I have chosen to allow some less-than-ideal formatting on mobile in order to preserve the styling of the PDF. 
+  </div>
+
+  <%= render partial: 'resume_body' %>
 </div>

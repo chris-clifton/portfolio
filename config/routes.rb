@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/contact'
   get 'resume', to: 'home#resume', as: :resume
+  get 'home/download_resume'
   get 'blog', to: 'posts#index', as: :blog
 end
