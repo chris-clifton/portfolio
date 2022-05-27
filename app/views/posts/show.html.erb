@@ -1,6 +1,6 @@
 <div id="<%= dom_id @post %>" class="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
   <div class="text-left">
-    <%= link_to 'Back to posts', posts_path, class: "text-indigo-700 font-medium" %>
+    <%= link_to 'Back to posts', posts_path, class: "text-indigo-600 font-medium" %>
 
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
@@ -25,7 +25,7 @@
         </p>
 
         <div class="flex justify-between my-8">
-          <%= link_to 'Back to posts', posts_path, class: "text-indigo-700 font-medium mb-4" %>
+          <%= link_to 'Back to posts', posts_path, class: "text-indigo-600 font-medium mb-4" %>
           <div class="text-sm text-gray-500 italic text-right">
             <p>Thanks for reading!</p>
             <p>- Chris</p>
