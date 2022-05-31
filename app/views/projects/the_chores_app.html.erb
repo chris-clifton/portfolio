@@ -1,0 +1,308 @@
+<div class="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8 text-gray-500">
+  <div class="text-left">
+    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+      <%= inline_svg_tag("the_house.svg", size: "64 * 64", class: "inline") %>
+      <span class="text-indigo-600">The Chores App</span>
+    </h1>
+  </div>
+
+  <section class="pt-8 sm:w-3/4">
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">
+        Overview
+      </div>
+
+      <p class="indent-4 mb-2">
+        The idea for this one stemmed from needing to solve several problems within my home and my inability to use existing software when I can create something new and tailor it to my specific needs.
+      </p>
+
+      <p class="indent-4 mb-2">
+        The main problems I wanted to solve and goals I wanted to acheive are:
+      </p>
+
+      <ul class="mb-4">
+        <li class="list-disc ml-4">
+          Teach how to manage money
+        </li>
+        <li class="list-disc ml-4">
+          Teach the concept that money is finite and that you often (and regrettably) have to choose to spend money on one thing or the other
+        </li>
+        <li class="list-disc ml-4">
+          Reward positive behavior
+        </li>
+        <li class="list-disc ml-4">
+          Penalize negative behavior
+        </li>
+        <li class="list-disc ml-4">
+          Create a system to help organize things like grocery lists
+        </li>
+        <li class="list-disc ml-4">
+          Create the idea of "training" where users can be taught the right way to complete new chores and "unlock" more rewards
+        </li>
+      </ul>
+
+      <p class="indent-4 mb-2">
+        In a nutshell, I wanted to create a fun and useful app that assists a family with getting things done while also teaching a lot of important lessons that are not fun to learn the hard way and do all this with a heavy focus on making sure I'm not completely "gamifying" parenting.      
+      </p>
+
+      <p class="indent-4 mb-2">
+        Since this is a bigger project, I figured I may as well extend the effort a bit and actually create a usable application and put it out there on the big scary internet to see if anyone else could glean any value from it, so I needed to write production quality code and use production quality tools.
+      </p>
+
+      <p class="indent-4 mb-2">
+        As always, I had some technical goals for this project and they are:
+      </p>
+
+      <ul class="mb-4">
+        <li class="list-disc ml-4">
+          Design a neat, clean, easy-to-use, and responsive UI that appeals to a wide age range of users
+        </li>
+
+        <li class="list-disc ml-4">
+          Leverage newer Rails tech like Hotwire and Turbo for an SPA-like experience
+        </li>
+
+        <li class="list-disc ml-4">
+          Flex some DevOps muscles and use a production quality environment with CI/CD
+        </li>
+
+        <li class="list-disc ml-4">
+          Heavy focus on testing coverage, quality, best practices
+        </li>
+      </ul>
+
+      <p class="mb-2">
+        And before I forget, I'd like to shout out my friend and mentor Jason, who has helped me immensely as a professional developer and is also working on this project with me.
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">
+        Gallery
+      </div>
+
+      <p class="mb-2">
+        <span class="font-bold text-red-500">TODO:</span> add images of application here
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">Tech Specs</div>
+      <table>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Status:</th>
+          <td>MVP In Progress</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Backend:</th>
+          <td>Ruby on Rails</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Database:</th>
+          <td>PostgreSQL</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Frontend:</th>
+          <td>Hotwire, Turbo, Tailwind, and Stimulus</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Deployment:</th>
+          <td>AWS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="font-bold text-3xl mb-2 text-gray-700">
+      Features
+    </div>
+
+    <p class="mb-2">
+      For the MVP, the primary features are:
+    </p>
+
+    <ul class="mb-4">
+      <li class="list-disc ml-4">
+        Chores system
+      </li>
+      <li class="list-disc ml-4">
+        Rewards system
+      </li>
+      <li class="list-disc ml-4">
+        Consequences system
+      </li>
+      <li class="list-disc ml-4">
+        Flexible multi-tenant users model with role-based permissions
+      </li>
+    </ul>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      Chores System
+    </div>
+
+    <p class="mb-2">
+      At its core, the chores system is a feature that allows an admin to assign tasks to users. Admins can place rewards for completion and consequences for failure on tasks. 
+    </p>
+
+    <p class="mb-2">
+      For the MVP, I am only dealing with "chores" as a type of Assignment. A Chore, as I imagine it, will always have a reward and a consequence. These are Assignments that must be completed.
+    </p>
+
+    <p class="mb-2">
+      For Phase Two, I am introducing the concepts of "Challenges", which are similar to a Chore, only they do not have a consequence. These assignments act as a "bonus" opportunity to gain rewards for doing extra work.
+    </p>
+
+    <p class="mb-2">
+      I will also be introducing "Training" in Phase Two, which allows an admin to assign a user training on a new task which can then be unlocked as a Chore or Challenge. I admit that the primary motivation here is to ensure that if I'm paying out all this rewards money at least things are getting done my way 🤷.
+    </p>
+
+    <p class="mb-2">
+      I am only touting my undone future plans so that I can explain my design decisions when it comes to the chores feature.
+    </p>
+
+    <p class="mb-2 font-semibold text-lg text-gray-700">
+      Models
+    </p>
+
+    <p class="mb-2">
+      We obviously have a User class (actually called Members, which I'll get to later). A Member can be assigned many Tasks by an admin (Captain)- these can be Chores, Challenges, or Training.
+    </p>
+
+    <p class="mb-2">
+      Tasks should be repeatable and are always going to be pretty much the same regardless of the Member thats been assigned (like walk the dog), so the variable parts of the task (who's doing it, when they're doing it, reward, consequence, completion status) I've encapsulated in an Assignment- a join table between Members and Tasks.
+    </p>
+
+    <p class="mb-2">
+      <span class="font-bold text-red-500">TODO:</span> ERD goes here
+    </p>
+
+    <p class="mb-2">
+      The basic flow of this system is:
+    </p>
+
+    <ul class="mb-4">
+      <li class="list-disc ml-4">
+        Captains create Tasks (walk the dog, do the dishes, take out the trash)
+      </li>
+      <li class="list-disc ml-4">
+        Captains assign Tasks (creates an Assignment record) to a Member and selects it's category (Chore, Challenge, Training), its reward value, its consequence (if applicable), and its due date
+      </li>
+      <li class="list-disc ml-4">
+        Members can view their Assignments, complete them, and mark them as "Ready for Review"
+      </li>
+      <li class="list-disc ml-4">
+        When a Captain views an Assignment a Member marked as "Ready for Review", they can mark it "Complete", "Failed", or "In Progress"
+      </li>
+      <li class="list-disc ml-4">
+        When an Assignment is marked "Complete", its reward is applied to the Member and removed from their view of current Assignments
+      </li>
+      <li class="list-disc ml-4">
+        When an Assignment is marked "Failed", its consequence is applied to the Member and removed from their view of current Assignments
+      </li>
+      <li class="list-disc ml-4">
+        When an Assignment is marked "In Progress", it allows the Member another shot at completing it correctly and remains an "open" Assignment for them to view and complete
+      </li>
+    </ul>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      Rewards System
+    </div>
+
+    <p class="mb-2">
+      Rewards is an integer-based value system that are stored as an attribute on the Member model.
+    </p>
+
+    <p class="mb-2">
+      I didn't want to couple the rewards system to anything specific and think of this as more of a "Chuck-E-Cheese" ticket-based system. For my organization (Crew), we equate 1 reward point to $1 or 15 minutes of screen time.
+    </p>
+
+    <p class="mb-2">
+      I wanted to leave that flexible for the other potential Captains out there so that this system works for as many different types of Crews as possible.
+    </p>
+
+    <p class="mb-2">
+      Like we talked about earlier, rewards can be gained by completing Assignments and this happens automatically. Since I am not coupling rewards to a specific entity (money, screen time) in the application, there is also a feature where a Captain can arbitrarily deduct rewards (when a Member cashes them in) and also arbitrarily add rewards (backpay, birthday, a good thing that exists outside the scope of this app, etc.).
+    </p>
+
+    <p class="mb-2">
+      All changes to the rewards value are tracked with histories that everyone can see and easily understand their balance. The history will have either an Assignment generated message of "Completed Assignment: Walk the dog" or a required note from the Captain if the change was made arbitrarily.
+    </p>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      Consequences System
+    </div>
+
+    <p class="mb-2">
+      Consequences have their own model (Consequence) and optionally belong to an Assignment.
+    </p>
+
+    <p class="mb-2">
+      Like rewards, I wanted this to be flexible for all different types of Crews and the consequences they are used to using.
+    </p>
+
+    <p class="mb-2">
+      When creating a Chore Assignment, a Captain can either select an amount of rewards points to deduct or create a custom consequence (time out, screen time, grounded) with a value and duration (e.g. 15 minutes screen time, 1 week grounded).
+    </p>
+
+    <p class="mb-2">
+      For rewards points Consequences, this is applied as soon as the Assignment is marked failed and thats that.
+    </p>
+
+    <p class="mb-2">
+      For custom Consequences, such as 15 minutes of time out, there is a "Pending Review"/"Complete" status (similar to Assignments) that must be completed by the Member and approved by a Captain.
+    </p>
+
+    <p class="mb-2">
+      Like Rewards, a Member can always view their Consequences history.
+    </p>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      Multi-tenant Users System
+    </div>
+
+    <p class="mb-2">
+      As mentioned earlier, in an effort to remove some sterility from the app, we are using a Member model in place of Users and their roles can be Captain or Member. Members belong to an organization model, which is called a Crew.
+    </p>
+
+    <p class="mb-2">
+      The CrewOwnable module handles multi-tenancy/multiple Crews and their "ownable" models (Members, Assignments, etc.) which was...inspired...by <%= link_to 'this excellent write-up from one of the Kolide engineers', 'https://dev.to/kolide/a-rails-multi-tenant-strategy-thats-30-lines-and-just-works-58cd', class: 'text-indigo-600' %>.
+    </p>
+
+    <p class="mb-2">
+      For the MVP, I am creating my users with database seeds and not really dealing too much with Devise and CrewOwnable. When the MVP is complete and I can test the application with my own Crew, I will need to refactor and handle registrations and sessions a bit before opening this up to the public.
+    </p>
+
+    <p class="mb-2">
+      Specifically, I will need to handle Crews with a single email address (assuming belonging to the Captain) and consider that an 8 year old user probably doesn't have an email address to authenticate with and also can't be relied on to remember their Captains email plus their own username/password.
+    </p>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      Future Plans
+    </div>
+
+    <p class="mb-2">
+      I am racing to get this working locally for my house/Crew and, after some feedback-based refactoring, I will be deploying this with the features I've described above for free and public use.
+    </p>
+
+    <p class="mb-2">
+      After that, I have the intention of working on the following features in Phase Two:
+    </p>
+
+    <ul class="mb-4">
+      <li class="list-disc ml-4">
+        Challenges system
+      </li>
+      <li class="list-disc ml-4">
+        Training system
+      </li>
+      <li class="list-disc ml-4">
+        Milestones system
+      </li>
+      <li class="list-disc ml-4">
+        Notification system
+      </li>
+      <li class="list-disc ml-4">
+        Shopping lists
+      </li>
+    </ul>
+  </section>
+</div>

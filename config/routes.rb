@@ -10,6 +10,13 @@ Rails.application.routes.draw do
   root 'home#landing'
 
   get 'home/projects'
+  get 'projects', to: 'projects#index', as: :projects
+  get 'projects/the_chores_app'
+  get 'projects/picu'
+  get 'projects/portfolio'
+  get 'projects/vision'
+
+
   get 'home/about'
   get 'home/contact'
   get 'resume', to: 'home#resume', as: :resume

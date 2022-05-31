@@ -1,0 +1,156 @@
+<div class="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8 text-gray-500">
+  <div class="text-left">
+    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+      <span class="ml-2 text-6xl">🗂</span>
+      <span class="text-indigo-600">Portfolio</span>
+    </h1>
+  </div>
+
+  <section class="pt-8 sm:w-3/4">
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">
+        Overview
+      </div>
+      
+      <p class="indent-4 mb-2">
+        The portfolio's purpose as a web application are three main things:
+      </p>
+      
+      <ul class="mb-4">
+        <li class="list-disc ml-4">
+          Provide some details on the projects I've been working on
+        </li>
+        <li class="list-disc ml-4">
+          Give a home to my software engineering blog (hopefully encouraging me to write more)
+        </li>
+        <li class="list-disc ml-4">
+          Operate as my "business card" so anyone interested in working with me, or knowing more about me, can hopefully find whatever they're looking for
+        </li>
+      </ul>
+
+      <p class="indent-4 mb-2">
+        In addition to all that, I had some learning goals I wanted to meet which were: 
+      </p>
+
+      <ul class="mb-4">
+        <li class="list-disc ml-4">
+          Design a neat, clean, and responsive UI
+        </li>
+
+        <li class="list-disc ml-4">
+          Get some more experience with Hotwire and Turbo. I wanted to know how close I could get to server-rendered HTML feeling like an SPA- all while using as little JavaScript as humanly possible.
+        </li>
+      </ul>
+
+      <p class="indent-4 mb-2">
+        I guess the "neat and clean UI" part is open for interpretation, but I'm fairly pleased with how it turned out. And I did manage to make it pretty responsive (with one small caveat I'll explain in the PDF feature section).
+      </p>
+
+      <p class="mb-2">
+        I'm also happy to say that, as of writing this, there are four JavaScript functions in this project. Granted, there isn't a ton of interactivity outside of the Blog feature and the project comments, but I was able to accomplish everything besides these four functions using Hotwire and Turbo.
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">Tech Specs</div>
+      <table>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Status:</th>
+          <td>Complete</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Backend:</th>
+          <td>Ruby on Rails</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Database:</th>
+          <td>PostgreSQL</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Frontend:</th>
+          <td>Hotwire, Turbo, Tailwind, and a sprinkling of Stimulus</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Deployment:</th>
+          <td>Heroku, AWS</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="font-bold text-3xl mb-2 text-gray-700">
+      Features
+    </div>
+
+    <p class="mb-2">
+      Most of this application is static HTML but there are a couple little features I added that warranted doing this in Rails vs. something smaller like Sinatra.
+    </p>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      The Blog
+    </div>
+
+    <p class="mb-2">
+      I know, everyone has built a blog. DHH built one in 15 minutes when he debuted Rails back in 2005.
+    </p>
+
+    <p class="mb-2">
+      The technical challenges of building a blog are almost non-existent at this point, so I'm not going to spend too much time talking about them here, but I do want to point out the use of Hotwire and Turbo for the comments section.
+    </p>
+
+    <p class="mb-2">
+      There is no JavaScript on the comment form- I'm simply making use of Turbo frames and streams to replace parts of the page (new comments, comments count, likes count) with server-rendered partials and HTML Over the Wire.
+    </p>
+
+    <p class="mb-2">
+      There is one tiny bit of JS on the posts#show view, which of course is the confetti animation you get when you "like" a post. I think its kind of obnoxious and I'm not too keen on unnecessary motion graphics on a web page, but my girlfriend says its "cute" so it will be there forever.
+    </p>
+
+    <p class="mb-2">
+      There is one other JS function on posts#index which is just to handle a debounce on the search form. The rest of that feature is also all Hotwire and Turbo.
+    </p>
+
+    <p class="mb-2">
+      One last feature to touch on is the likes counter. Since I don't want to manage users and logins and I also don't want to use cookies, I'm just storing an IP address with a post ID and boolean for whether this IP has liked the post before or not. Most users at home are going to have dynamic IP addresses issued by their ISP so this solution is not perfect, but this is an arbitrary feature so the solution is good enough for me.
+    </p>
+
+    <div class="font-bold text-xl mb-2 text-gray-700">
+      Dynamic PDF Generation
+    </div>
+
+    <p class="mb-2">
+      I hate updating my resume. I've never been a fan of Word or Google Docs for this purpose and I flat out hate all the "free" templating services out there that are only free until you try to save the resume you just spent two hours building.
+    </p>
+
+    <p class="mb-2">
+      I've also always struggled to get a resume built on any of these platforms to look decent.
+    </p>
+
+    <p class="mb-2">
+      But I like writing code, and I knew I could make it look decent if I were able to leverage my skills designing and styling a web application.
+    </p>
+
+    <p class="mb-2">
+      Seeing this as an opportunity, I decided I would write my resume as a view in this app and just generate it on the fly whenever the user clicks the "Download PDF" button.
+    </p>
+
+    <p class="mb-2">
+      For this feature, I'm using the <%= link_to 'Dhalang gem', 'https://github.com/NielsSteensma/Dhalang', class: 'text-indigo-600' %> which is capable of receiving a Rails partial (my resume body), and returning a PDF version (preserving the CSS as its written in the view) which I send back to the browser.
+    </p>
+
+    <p class="mb-2">
+      I also chose to use another JavaScript function to open the PDF returned from the server in a new browser tab rather than immediately force a download on click.
+    </p>
+
+    <p class="mb-2">
+      The one caveat I mentioned earlier is that, in mobile view, the styling gets a little wacky in the left column with my contact info in it. Because I am using a Rails view to generate the PDF, I can't just use Tailwind breakpoints like I am everywhere else to make it responsive without wrecking the styling of the generated PDF. This was a tradeoff I felt was worth it, and if you open that view on mobile, I apoligize in advance for some bad looking word breaks.
+    </p>
+
+    <p class="mb-2">
+      Now, next time I want to update my resume, I don't have to look through a bunch of accounts I setup months/years prior, I have full control over styling, my portfolio and resume are always in sync (and only updated in one place!), and its both super portable and easily accessible.
+    </p>
+
+    <p class="mb-2">
+      Check out this blog post for a deeper dive on how I accomplished this.
+    </p>
+  </section>
+</div>
