@@ -66,48 +66,56 @@
       </h2>
     </div>
 
-    <div class="flex mb-8">
-      <div class="mr-4 flex-shrink-0 self-center">
-        <%= inline_svg_tag("the_house.svg", size: "64 * 64", class: "mx-auto") %>
+    <%= link_to projects_the_chores_app_path do %>
+      <div class="flex mb-8">
+        <div class="mr-4 flex-shrink-0 self-center">
+          <%= inline_svg_tag("the_house.svg", size: "64 * 64", class: "mx-auto") %>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">The Chores App</h4>
+          
+          <p class="mt-1 text-gray-500">My current WIP side-project to track household tasks and responsibilities like chores and allowances, education and training, shopping lists, and more.</p>
+        </div>
       </div>
-      <div>
-        <h4 class="text-lg font-bold">The Chores App</h4>
-        
-        <p class="mt-1 text-gray-500">My current WIP side-project to track household tasks and responsibilities like chores and allowances, education and training, shopping lists, and more.</p>
-      </div>
-    </div>
+    <% end %>
 
-    <div class="flex mb-8">
-      <div class="mr-3 flex-shrink-0 self-center">
-        <span class="ml-2 text-6xl">🪴</span>
+    <%= link_to projects_picu_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+          <span class="ml-2 text-6xl">🪴</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">PiCU</h4>
+          
+          <p class="mt-1 text-gray-500">Raspberry Pi "Plant ICU" to monitor soil moisture/temperature and deliver water based on the plant's needs and display the plant's overall health/reporting on an integrated touchscreen Rails application.</p>
+        </div>
       </div>
-      <div>
-        <h4 class="text-lg font-bold">PiCU</h4>
-        
-        <p class="mt-1 text-gray-500">Raspberry Pi "Plant ICU" to monitor soil moisture/temperature and deliver water based on the plant's needs and display the plant's overall health/reporting on an integrated touchscreen Rails application.</p>
-      </div>
-    </div>
+    <% end %>
 
-    <div class="flex mb-8">
-      <div class="mr-3 flex-shrink-0 self-center">
-        <span class="ml-2 text-6xl">🪞</span>
+    <%= link_to projects_vision_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+          <span class="ml-2 text-6xl">🪞</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">Vision</h4>
+          
+          <p class="mt-1 text-gray-500">Raspberry Pi-powered smart mirror to display general day-to-day information like a clock, calendars, weather, etc.</p>
+        </div>
       </div>
-      <div>
-        <h4 class="text-lg font-bold">Vision</h4>
-        
-        <p class="mt-1 text-gray-500">Raspberry Pi-powered smart mirror to display general day-to-day information like a clock, calendars, weather, etc.</p>
-      </div>
-    </div>
+    <% end %>
 
-    <div class="flex mb-8">
-      <div class="mr-3 flex-shrink-0 self-center">
-        <span class="ml-2 text-6xl">🗂</span>
+    <%= link_to projects_portfolio_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+          <span class="ml-2 text-6xl">🗂</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">This Portfolio!</h4>
+          
+          <p class="mt-1 text-gray-500">Theres a bit more than static HTML on this website- take a tour of what all I'm doing here and how I decided to do it.</p>
+        </div>
       </div>
-      <div>
-        <h4 class="text-lg font-bold">This Portfolio!</h4>
-        
-        <p class="mt-1 text-gray-500">Theres a bit more than static HTML on this website- take a tour of what all I'm doing here and how I decided to do it.</p>
-      </div>
-    </div>
+    <% end %>
   </section>
 </div>

@@ -4,7 +4,7 @@
       <div class="flex">
         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
           <%= link_to 'chrisclifton.dev', root_path, class: "#{active_nav('home', action_name, controller_name)}" %>
-          <%= link_to 'Projects', home_projects_path, class: "#{active_nav('projects', action_name, controller_name)}" %>
+          <%= link_to 'Projects', projects_path, class: "#{active_nav('projects', action_name, controller_name)}" %>
           <%= link_to 'Blog', blog_path, class: "#{active_nav('posts', action_name, controller_name)}" %>
           <%= link_to 'Resume', resume_path, class: "#{active_nav('resume', action_name, controller_name)}" %>
         </div>
@@ -40,7 +40,7 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div data-target="nav.mobileMenu" class="hidden sm:hidden" id="mobile-menu">
     <div class="pt-2 pb-3 space-y-1">
-      <%= link_to 'Projects', home_projects_path, class: "#{active_mobile_nav('projects', action_name, controller_name)}" %>
+      <%= link_to 'Projects', projects_path, class: "#{active_mobile_nav('projects', action_name, controller_name)}" %>
       <%= link_to 'Blog', blog_path, class: "#{active_mobile_nav('posts', action_name, controller_name)}" %>
       <%= link_to 'Resume', resume_path, class: "#{active_mobile_nav('resume', action_name, controller_name)}" %>
     </div>
