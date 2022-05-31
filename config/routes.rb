@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'home/projects'
   get 'projects', to: 'projects#index', as: :projects
-  get 'projects/the_chores_app'
+  get 'projects/chores_app'
   get 'projects/picu'
   get 'projects/portfolio'
   get 'projects/vision'

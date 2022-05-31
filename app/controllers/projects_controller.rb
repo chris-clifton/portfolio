@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def index
   end
 
-  def the_chores_app
+  def chores_app
   end
 
   def picu
