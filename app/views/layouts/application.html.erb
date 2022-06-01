@@ -17,13 +17,15 @@
       <%= render partial: 'layouts/nav' %>
 
       <div class="py-10">
+        <%= render partial: 'layouts/flash_notices' %>
 
         <main class="px-2">
           <%= yield %>
         </main>
       </div>
-
-      <%= render partial: 'layouts/footer' %>
     </div>
+
+    <%= render partial: 'layouts/footer' %>
+
   </body>
 </html>
