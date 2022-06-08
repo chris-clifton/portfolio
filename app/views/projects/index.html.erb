@@ -9,11 +9,92 @@
     </p>
   </div>
 
-  <section class="pt-8 sm:w-3/4">
-    <div class="text-left mb-4">
+  <section class="pt-8">
+    <div class="text-left mb-2">
+      <h2 class="text-2xl tracking-tight font-extrabold text-gray-900">
+        <span class="block xl:inline text-indigo-600">Personal</span>
+      </h2>
+    </div>
+
+    <div class="text-gray-500 mb-4">
+      Click on any of my personal projects for a closer look at the application and what I'm doing.
+    </div>
+
+    <%= link_to projects_chores_app_path do %>
+      <div class="flex mb-8">
+        <div class="mr-4 flex-shrink-0 self-center">
+          <%= inline_svg_tag("the_house.svg", size: "64 * 64", class: "mx-auto") %>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">The Chores App</h4>
+          
+          <p class="mt-1 text-gray-500">My current WIP side-project to track household tasks and responsibilities like chores and allowances, education and training, shopping lists, and more.</p>
+        </div>
+      </div>
+    <% end %>
+
+    <%= link_to projects_picu_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+          <span class="ml-2 text-6xl">🪴</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">PiCU</h4>
+          
+          <p class="mt-1 text-gray-500">Raspberry Pi "Plant ICU" to monitor soil moisture/temperature and deliver water based on the plant's needs and display the plant's overall health/reporting on an integrated touchscreen Rails application.</p>
+        </div>
+      </div>
+    <% end %>
+
+    <%= link_to projects_christmas_bomb_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+        <span class="ml-2 text-6xl">💣</span>
+      </div>
+      <div>
+          <h4 class="text-lg font-bold">The Christmas Bomb</h4>
+          
+        <p class="mt-1 text-gray-500">A spooky Christmas trivia game.</p>
+      </div>
+    </div>
+    <% end %>
+
+    <%= link_to projects_portfolio_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+          <span class="ml-2 text-6xl">🗂</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">This Portfolio!</h4>
+          
+          <p class="mt-1 text-gray-500">Theres a bit more than static HTML on this website- take a tour of what all I'm doing here and how I decided to do it.</p>
+        </div>
+      </div>
+    <% end %>
+
+    <%= link_to projects_vision_path do %>
+      <div class="flex mb-8">
+        <div class="mr-3 flex-shrink-0 self-center">
+        <span class="ml-2 text-6xl">🪞</span>
+      </div>
+      <div>
+          <h4 class="text-lg font-bold">Vision</h4>
+          
+        <p class="mt-1 text-gray-500">Raspberry Pi-powered smart mirror to display general day-to-day information like a clock, calendar, weather, etc.</p>
+      </div>
+    </div>
+    <% end %>
+  </section>
+
+  <section class="">
+    <div class="text-left mb-2">
       <h2 class="text-2xl tracking-tight font-extrabold text-gray-900">
         <span class="block xl:inline text-indigo-600">Work</span>
       </h2>
+    </div>
+
+    <div class="text-gray-500 mb-4">
+      Unfortunately, due to the proprietary nature of these projects and NDAs and all that, I can't get into much further detail on these projects.
     </div>
 
     <div class="flex mb-8">
@@ -45,7 +126,7 @@
       <div>
         <h4 class="text-lg font-bold">Data Ingestion System</h4>
         
-        <p class="mt-1 text-gray-500">Vulnerability database management system for cyber-security researchers to collect and distribute cyber threat intelligence.</p>
+        <p class="mt-1 text-gray-500">Vulnerability database management system for cyber-security researchers to collect, organize, and distribute cyber threat intelligence.</p>
       </div>
     </div>
 
@@ -54,68 +135,10 @@
         <span class="ml-2 text-6xl">💻</span>
       </div>
       <div>
-        <h4 class="text-lg font-bold">The Platform</h4>
+        <h4 class="text-lg font-bold">The Portal</h4>
         
         <p class="mt-1 text-gray-500">A client portal for the Data Ingestion System where users and organizations can input information on their hardware/software and receive vulnerability updates on them.</p>
       </div>
     </div>
-
-    <div class="text-left mb-4">
-      <h2 class="text-2xl tracking-tight font-extrabold text-gray-900">
-        <span class="block xl:inline text-indigo-600">Personal</span>
-      </h2>
-    </div>
-
-    <%= link_to projects_chores_app_path do %>
-      <div class="flex mb-8">
-        <div class="mr-4 flex-shrink-0 self-center">
-          <%= inline_svg_tag("the_house.svg", size: "64 * 64", class: "mx-auto") %>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold">The Chores App</h4>
-          
-          <p class="mt-1 text-gray-500">My current WIP side-project to track household tasks and responsibilities like chores and allowances, education and training, shopping lists, and more.</p>
-        </div>
-      </div>
-    <% end %>
-
-    <%= link_to projects_picu_path do %>
-      <div class="flex mb-8">
-        <div class="mr-3 flex-shrink-0 self-center">
-          <span class="ml-2 text-6xl">🪴</span>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold">PiCU</h4>
-          
-          <p class="mt-1 text-gray-500">Raspberry Pi "Plant ICU" to monitor soil moisture/temperature and deliver water based on the plant's needs and display the plant's overall health/reporting on an integrated touchscreen Rails application.</p>
-        </div>
-      </div>
-    <% end %>
-
-    <%= link_to projects_vision_path do %>
-      <div class="flex mb-8">
-        <div class="mr-3 flex-shrink-0 self-center">
-          <span class="ml-2 text-6xl">🪞</span>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold">Vision</h4>
-          
-          <p class="mt-1 text-gray-500">Raspberry Pi-powered smart mirror to display general day-to-day information like a clock, calendars, weather, etc.</p>
-        </div>
-      </div>
-    <% end %>
-
-    <%= link_to projects_portfolio_path do %>
-      <div class="flex mb-8">
-        <div class="mr-3 flex-shrink-0 self-center">
-          <span class="ml-2 text-6xl">🗂</span>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold">This Portfolio!</h4>
-          
-          <p class="mt-1 text-gray-500">Theres a bit more than static HTML on this website- take a tour of what all I'm doing here and how I decided to do it.</p>
-        </div>
-      </div>
-    <% end %>
   </section>
 </div>

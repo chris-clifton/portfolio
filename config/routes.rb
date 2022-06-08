@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'projects/picu'
   get 'projects/portfolio'
   get 'projects/vision'
+  get 'projects/christmas_bomb'
 
 
   get 'home/about'

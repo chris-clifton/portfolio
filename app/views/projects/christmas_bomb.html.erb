@@ -1,0 +1,183 @@
+<div class="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8 text-gray-500">
+  <div class="text-left">
+    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+      <span class="ml-2 text-4xl">💣</span>
+      <span class="text-indigo-600">Christmas Bomb</span>
+    </h1>
+  </div>
+
+  <section class="pt-8 sm:w-3/4">
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">
+        Overview
+      </div>
+
+      <p class="mb-2">
+        A Christmas trivia game with a personalized spooky twist.
+      </p>
+
+      <p class="mb-2 font-semibold text-lg text-gray-700">
+        Backstory
+      </p>
+
+      <p class="mb-2">
+        A few weeks before Christmas, one of the kids got the "Worst Case Scenario Survival Guide" for their birthday and proceeded to read aloud every page in the book during a long drive back from the lake.
+      </p>
+
+      <p class="mb-2">
+        The chapter "How to Detect a Letter Bomb" was of particular interest to everyone so I thought "I know, I'll wrap a Christmas gift like a bomb and see if they were paying attention".
+      </p>
+
+      <p class="mb-2">
+        As usual, I decided that this absolutely required a Rails app.
+      </p>
+
+      <p class="mb-2">
+        I would create a bomb-like device and wire it to all their gifts. They would have to "defuse" it or their presents would be incinerated.
+      </p>
+
+      <p class="mb-2">
+        The idea was to setup a touchscreen Raspberry Pi, create a game on it, and just attach some electrical wire from the apparatus to each gift.
+      </p>
+
+      <p class="mb-2">
+        In order to sell this to the kids, I invented an evil elf named Malekith that is known for doing this kind of thing and had tormented my brothers and I when we were about their age.
+      </p>
+
+      <p class="mb-2">
+        I sold it a little too well.
+      </p>
+
+      <p class="mb-2">
+        I realized I needed to tone everything down a bit. I ditched the bomb apparatus and focused on a browser-based game and lightened up with the evil-elf-out-there-ruining-Christmas stuff.
+      </p>
+
+      <p class="mb-2">
+        I also realized that teaching kids to try to defuse a bomb went against everything we had read in the book and, for anyone that hasn't read it, the official advice is "run away".
+      </p>
+
+      <p class="mb-2">
+        Anyway, the family-friendly version of this idea became a successful game and I managed to save Christmas (by virtue of not ruining it).
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">
+        Gallery
+      </div>
+
+      <p class="mb-2">
+        <span class="font-bold text-red-500">TODO:</span> add images of application here
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="mb-4">
+      <div class="font-bold text-3xl mb-2 text-gray-700">Tech Specs</div>
+
+      <p class="mb-2">
+        Normally I have some learning goals and my projects are playgrounds for meeting them.
+      </p>
+
+      <p class="mb-2">
+        This application was more of a race to the finish so it isn't super pretty but it met my one goal which was just that it works.
+      </p>
+
+      <table>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Status:</th>
+          <td>Complete</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Backend:</th>
+          <td>Ruby on Rails</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Database:</th>
+          <td>PostgreSQL</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Frontend:</th>
+          <td>Tailwind and Stimulus</td>
+        </tr>
+        <tr>
+          <th class="text-left pr-4 text-gray-700">Deployment:</th>
+          <td>Heroku</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="font-bold text-3xl mb-2 text-gray-700">
+      Game Play
+    </div>
+
+    <p class="mb-2">
+      There are two versions of this game- the version specifically and personally made for my family (Story Mode) and a "public" version with more generic questions.
+    </p>
+
+    <p class="mb-2">
+      The game's main menu features a normal "Start Game" button for anyone to play the public version and there is also a password field with a hint that only the kids would know and allow them to access their Story Mode.
+    </p>    
+
+    <p class="mb-2 font-semibold text-lg text-gray-700">
+      Story Mode
+    </p>
+
+    <p class="mb-2">
+      After entering the password and entering Story Mode, the kids would be greeted by the mischievious elf Malekitch who explains the rules and stakes of the game.
+    </p>
+
+    <p class="mb-2">
+      Essentially, Malekith has stolen all the Christmas presents and the kids would have to work together to answer a series of multiple choice questions (tailored to them) to reveal their location.
+    </p>
+
+    <p class="mb-2">
+      If they were to get 3 questions wrong, Malekith would take off with all the gifts. Really though, they'd have just had to start over from the beginning.
+    </p>
+
+    <p class="mb-2">
+      The kids would take turns answering 10 questions each. There is some game dialog in between players and one little "trick" where they are given the option to skip the game entirely and immediately reveal the location of the presents.
+    </p>
+
+    <p class="mb-2">
+      This option (really the only path forward) instead starts a game clock and informs them they would only have 30 seconds to answer each question.
+    </p>
+
+    <p class="mb-2">
+      I wanted them to feel a bit of pressure and excitement but not miss out on any of the questions due to a strict game clock so I set the JavaScript timeout to appear to be a 30 second countdown while really giving them 45.
+    </p>
+
+    <p class="mb-2">
+      If the game clock were to expire, the players currently selected answer would be submitted for them. If there was nothing selected, it would automatically be marked wrong. Luckily, we didn't run into this in Story Mode.
+    </p>
+
+    <p class="mb-2">
+      After successfully answering all 20 questions, there is a "final question" which is a riddle and the answer to the riddle was the actual location of their bags of gifts out in the backyard.
+    </p>
+
+    <p class="mb-2">
+      The game went great, the kids didn't ever have to start over, and then we turned it over to the rest of the family to play the public mode.
+    </p>
+
+    <p class="mb-2 font-semibold text-lg text-gray-700">
+      Public Mode
+    </p>
+
+    <p class="mb-2">
+      As a bonus, and to allow anyone to play, I included the same game with generic Christmas questions and all the Malekith stuff and game dialog yanked out.
+    </p>
+
+    <p class="mb-2">
+      The questions are basically regular Christmas trivia that you'd find if you Googled it. Reindeer names, Christmas movie questions, complete-that-Christmas-Carol, etc.
+    </p>
+
+    <p class="mb-2">
+      The game is pretty straight forward- answer 10 questions correctly and you win. Answer 3 wrong and you lose.
+    </p>
+  </section>
+</div>

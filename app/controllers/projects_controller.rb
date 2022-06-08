@@ -15,4 +15,7 @@ class ProjectsController < ApplicationController
 
   def vision
   end
+
+  def christmas_bomb
+  end
 end
